@@ -12,10 +12,10 @@ import getCropImageUrl from "../services/image-url";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
   const { data, error, isLoading } = useGenres();
 
   if (error) return null;
@@ -27,7 +27,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
         Genres
       </Heading>
       <List>
-        {data?.results.map((genre: Genre) => (
+        {data?.results.map((genre) => (
           <ListItem paddingY="5px" key={genre.id}>
             <HStack>
               <Image
@@ -40,7 +40,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 onClick={() => onSelectGenre(genre)}
                 whiteSpace="normal"
                 textAlign="left"
-                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
                 fontSize="lg"
                 variant="link"
               >
