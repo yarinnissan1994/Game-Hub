@@ -26,8 +26,16 @@ const GenreList = () => {
       </Heading>
       <List>
         {data?.results.map((genre) => (
-          <ListItem paddingY="5px" key={genre.id}>
-            <HStack>
+          <ListItem
+            paddingY="5px"
+            borderRadius="10px"
+            _hover={{
+              transform: "scale(1.1)",
+              transition: "transform .15s ease-in",
+            }}
+            key={genre.id}
+          >
+            <HStack paddingLeft={1}>
               <Image
                 boxSize="32px"
                 objectFit="cover"
