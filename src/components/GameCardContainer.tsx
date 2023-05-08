@@ -11,7 +11,7 @@ const GameCardContainer = ({ children }: Props) => {
       borderRadius={10}
       overflow="hidden"
       _hover={{
-        transform: "sclae(1.03)",
+        transform: "scale(1.02)",
         transition: "transform .15s ease-in",
       }}
     >

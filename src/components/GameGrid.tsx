@@ -17,14 +17,18 @@ const GameGrid = () => {
     data?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
 
   return (
-    <Box padding="10px">
+    <Box padding="5px">
       <InfiniteScroll
         dataLength={fetchedGameCount}
         hasMore={!!hasNextPage}
         next={() => fetchNextPage()}
         loader={<Spinner />}
       >
-        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3, xl: 4 }} spacing={5}>
+        <SimpleGrid
+          columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+          spacing={4}
+          margin={1}
+        >
           {isLoading &&
             skeletons.map((skeleton) => (
               <GameCardContainer key={skeleton}>
