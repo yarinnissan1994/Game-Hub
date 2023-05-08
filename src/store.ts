@@ -19,11 +19,17 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
   gameQuery: {},
   setSearchText: (searchInput) => set(() => ({ gameQuery: { searchInput } })),
   setGenreId: (genreId) =>
-    set((store) => ({ gameQuery: { ...store.gameQuery, genreId } })),
+    set((store) => ({
+      gameQuery: { ...store.gameQuery, genreId, searchInput: "" },
+    })),
   setPlatformId: (platformId) =>
-    set((store) => ({ gameQuery: { ...store.gameQuery, platformId } })),
+    set((store) => ({
+      gameQuery: { ...store.gameQuery, platformId, searchInput: "" },
+    })),
   setSortOrder: (sortOrder) =>
-    set((store) => ({ gameQuery: { ...store.gameQuery, sortOrder } })),
+    set((store) => ({
+      gameQuery: { ...store.gameQuery, sortOrder, searchInput: "" },
+    })),
 }));
 
 export default useGameQueryStore;
