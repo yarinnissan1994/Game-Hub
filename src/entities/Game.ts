@@ -8,6 +8,7 @@ export default interface Game {
   slug: string;
   genres: Genre[];
   publishers: Publisher[];
+  released: string;
   description_raw: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];

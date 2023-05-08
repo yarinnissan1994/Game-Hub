@@ -28,6 +28,12 @@ const GameAttributes = ({ game }: Props) => {
           <Text key={p.id}>{p.name}</Text>
         ))}
       </DefinitionItem>
+      <DefinitionItem term="Publishers">
+        {game.publishers?.map((p) => (
+          <Text key={p.id}>{p.name}</Text>
+        ))}
+      </DefinitionItem>
+      <DefinitionItem term="Release Date">{game.released}</DefinitionItem>
     </SimpleGrid>
   );
 };
